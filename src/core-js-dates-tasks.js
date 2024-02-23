@@ -53,7 +53,16 @@ function getTime(date) {
  * '2024-01-30T00:00:00.000Z' => 'Tuesday'
  */
 function getDayName(date) {
-  return date;
+  const daysName = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  return daysName[new Date(date).getDay()];
 }
 
 /**
