@@ -157,7 +157,20 @@ function isDateInPeriod(date, period) {
  * '2010-12-15T22:59:00.000Z' => '12/15/2010, 10:59:00 PM'
  */
 function formatDate(date) {
-  return date;
+  const dateObj = new Date(date);
+  const year = dateObj.getUTCFullYear();
+  const month = dateObj.getUTCMonth() + 1;
+  const day = dateObj.getUTCDate();
+  let hours = dateObj.getUTCHours();
+  let min = dateObj.getUTCMinutes();
+  let sec = dateObj.getUTCSeconds();
+  const timeStamp = hours >= 0 && hours < 12 ? 'AM' : 'PM';
+
+  hours = hours > 0 && hours <= 12 ? hours : hours - 12;
+  min = min < 10 ? `0${min}` : `${min}`;
+  sec = sec < 10 ? `0${sec}` : `${sec}`;
+
+  return `${month}/${day}/${year}, ${hours}:${min}:${sec} ${timeStamp}`;
 }
 
 /**
