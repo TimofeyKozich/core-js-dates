@@ -226,7 +226,33 @@ function getCountWeekendsInMonth(month, year) {
  * Date(2024, 1, 23) => 8
  */
 function getWeekNumberByDate(date) {
-  return date;
+  // const year = date.getFullYear();
+  // const firstDayInYearDate = new Date(year, 0, 1);
+  // const firstDay = firstDayInYearDate.getDay();
+  // let firstWeekMondayDate = new Date();
+  // switch (firstDay) {
+  //   case 1:
+  //     firstWeekMondayDate = new Date(year, 0, 1);
+  //     break;
+  //   case 2:
+  //   case 3:
+  //   case 4:
+  //     firstWeekMondayDate = new Date(year - 1, 11, 33 - firstDay);
+  //     break;
+  //   case 5:
+  //   case 6:
+  //     firstWeekMondayDate = new Date(year, 0, 8 - firstDay);
+  //     break;
+  //   case 0:
+  //     firstWeekMondayDate = new Date(year, 0, 2);
+  //     break;
+  //   default:
+  //     break;
+  // }
+  // console.log(date, firstWeekMondayDate, firstDayInYearDate);
+  // const dif = Date.parse(date) - Date.parse(firstWeekMondayDate);
+
+  // return Math.ceil(dif / (1000 * 60 * 60 * 24 * 7));
 }
 
 /**
