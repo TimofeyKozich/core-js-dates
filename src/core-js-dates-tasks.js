@@ -186,7 +186,32 @@ function formatDate(date) {
  * 1, 2024 => 8
  */
 function getCountWeekendsInMonth(month, year) {
-  return [month, year];
+  let count = 0;
+  const dayInMonth = new Date(year, month, 0).getDate();
+  const firstDay = new Date(year, month - 1, 1).getDay();
+  switch (firstDay) {
+    case 0:
+      count = dayInMonth > 28 ? 9 : 8;
+      break;
+    case 1:
+    case 2:
+    case 3:
+      count = 8;
+      break;
+    case 4:
+      count = dayInMonth > 30 ? 9 : 8;
+      break;
+    case 5:
+      count = dayInMonth > 30 ? 10 : 9;
+      break;
+    case 6:
+      count = dayInMonth > 29 ? 10 : 9;
+      break;
+    default:
+      break;
+  }
+
+  return count;
 }
 
 /**
