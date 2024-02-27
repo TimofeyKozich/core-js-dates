@@ -112,7 +112,10 @@ function getCountDaysInMonth(month, year) {
  * '2024-02-01T00:00:00.000Z', '2024-02-12T00:00:00.000Z'  => 12
  */
 function getCountDaysOnPeriod(dateStart, dateEnd) {
-  return [dateStart, dateEnd];
+  const start = Date.parse(dateStart);
+  const end = Date.parse(dateEnd);
+  const dif = end - start;
+  return Math.ceil(dif / (1000 * 60 * 60 * 24)) + 1;
 }
 
 /**
